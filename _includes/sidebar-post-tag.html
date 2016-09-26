@@ -2,7 +2,7 @@
 <div id="blog-categories">
     <ul class="list-group">
         {% for category in site.categories %}
-        <a href="{{ url }}">
+        <a href="{{ site.url }}{{ post.url }}">
         <li class="list-group-item">
             {{ category | first }}
             <span class="badge">{{ category[1].size }}</span>
