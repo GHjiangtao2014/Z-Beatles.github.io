@@ -127,3 +127,5 @@ ssserver -c /etc/shadowsocks.json -d start
 
 
 > 如有疑问请留言或者给我来信。  再随手打波广告：需要SS帐号的可以联系我，可提供SS帐号，价格实惠速度有保证，可先试用再确定是否购买。      　　------ Emailto: waynechu@waynechu.cn
+
+文章来自:  [拓扑部落（topblog.top）>>](http://www.topblog.top) [在VPS上搭建shadowsocks来科学上网](http://www.topblog.top/?p=60）

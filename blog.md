@@ -6,4 +6,4 @@ menu: blog
 css: ['blog-page.css']
 ---
 
-{% include category-page.html %}
+{% include blog-page.html %}
