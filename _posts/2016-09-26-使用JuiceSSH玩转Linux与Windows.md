@@ -1,4 +1,4 @@
-﻿---
+---
 layout: post
 title: 使用JuiceSSH玩转Linux与Windows
 category: JuiceSSH
