@@ -30,7 +30,15 @@
 </div>
 <script>
     $(document).ready(function(){
-
+  var articleList = [{% for post in site.posts %}  
+        <span style="white-space:pre">    </span>{"title":"{{post.title}}",  
+            "url":"{{site.url}}{{post.url}}",  
+    <span style="white-space:pre">    </span>   "date":"{{ post.date | date:'%Y-%m-%d' }}",  
+            "excerpt": '{{ post.excerpt | strip_html | strip_newlines | truncate:170 }}'  
+            {% if post.categories != empty %}  
+            ,  
+            "categories":[{% for category in post.categories %}"{{category}}"{% if forloop.last == false %},{% endif %}{% endfor %}]{% endif %}}  
+            {% if forloop.last == false %},{% endif %}{% endfor %}];  
         // Enable bootstrap tooltip
         $("body").tooltip({ selector: '[data-toggle=tooltip]' });
 
