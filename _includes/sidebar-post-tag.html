@@ -5,8 +5,8 @@
         <li class="list-group-item">
             <a href="http://www.waynechu.cn/blog?categoryName={{ category | first }}">
                 {{ category | first }}
-                <span class="badge">{{ category[1].size }}</span>
             </a>
+             <span class="badge">{{ category[1].size }}</span>
         </li>
     {% endfor %}  
     </ul>
