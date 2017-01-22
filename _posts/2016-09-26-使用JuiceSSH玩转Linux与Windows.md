@@ -45,30 +45,26 @@ Tips：由于天朝防火墙的原因，国外一些网站无法访问。如果�
 
 ### windows PowerShell服务的配置
 好了，我们来下载一个：
-![这里写图片描述](http://img.blog.csdn.net/20160926151934540)
-
+<img src="http://img.blog.csdn.net/20160926151934540" width = "500" alt="图片名称" align=center />
 配置如下图，最后那个File Based Public Key就是你的客户端生成的那个公钥（我这里使用的是git生成的那一对密钥,你可以从不同渠道获得一对密钥。）
-![这里写图片描述](http://img.blog.csdn.net/20160926152838802)
-
+<img src="http://img.blog.csdn.net/20160926152838802" width = "500" alt="图片名称" align=center />
 我们改一下编码方式，改成简体中文就好，这样当我们使用JuiceSSH终端连接windows时就显示中文了
-![这里写图片描述](http://img.blog.csdn.net/20160926153142515)
-
+<img src="http://img.blog.csdn.net/20160926153142515" width = "500" alt="图片名称" align=center />
 ### 移动端JuiceSSH的配置
 
 接下配置JuiceSSH，填写Windows 外网IP地址、端口（默认22）以及认证（这里认证用户名可随意填写，私钥一定要选择与刚才公钥配对的密钥，否则无法认证！）
-
-![这里写图片描述](http://img.blog.csdn.net/20160926154643364)
+<img src="http://img.blog.csdn.net/20160926154643364" width = "400" alt="图片名称" align=center />
 
 注意：如果你使用的是内网ip （即使用了路由器），如果仅仅设置内网IP地址，比如：192.168.1.100。
 那么只有当你的移动端也在该路由器管理下才能和Windows连接。
 但是可能很多小伙伴可能并不满足只在局域网环境下管理你的windows主机，而是即使在不同的网络环境（比如移动端使用3G/4G网络）就能远程操作你的windows主机，那么你就需要在路由器中配置相应的转发规则了。
 具体配置如下：
 进入路由器管理界面，找到转发规则中的虚拟服务器选项。填写虚拟服务器配置：
-![这里写图片描述](http://img.blog.csdn.net/20161003220516486)
+<img src="http://img.blog.csdn.net/20161003220516486" width = "500" alt="图片名称" align=center />
 配置完毕后你就可以在JuiceSSH的主机地址一栏中填写你的外网IP地址了，如果你不知道你的外网IP，可以在路由器的WAN口状态中查看。或者直接百度搜索‘ip’，即可得到你的外网IP。
 
 恭喜，到这一步你就可以移动端远程登录上你的windows主机了：
-![这里写图片描述](http://img.blog.csdn.net/20160926154810608)
+<img src="http://img.blog.csdn.net/20160926154810608" width = "400" alt="图片名称" align=center />
 
 你可以使用命令行远程操作你的windows主机：
 比如关机、注销、重启，查看文件目录，查看、终止系统进程，打开QQ，打开音乐播放器等等常见操作都可以使用命令行的形式进行远程操作。
@@ -77,7 +73,8 @@ Tips：由于天朝防火墙的原因，国外一些网站无法访问。如果�
 首先配置系统环境变量：在path中添加你的QQ执行文件`QQ.exe` 的目录位置，比如我的在： `D:\QQ\Bin`。然后是网易云音乐的执行文件`cloudmusic.exe` 在目录`D:\CloudMusic` 下。Path中只要添加这样两条记录即可：`D:\QQ\Bin` 和`D:\CloudMusic`
 
 然后你只要在命令行中输入`qq`，你就会惊奇的发现windows就会打开QQ登录程序，如果你设置了自动登录，那么你就实现了移动端远程操作登陆QQ。
-![这里写图片描述](http://img.blog.csdn.net/20160926160758419)![这里写图片描述](http://img.blog.csdn.net/20160926161123749)
+<img src="http://img.blog.csdn.net/20160926160758419" width = "400" alt="图片名称" align=center />
+<img src="http://img.blog.csdn.net/20160926161123749" width = "400" alt="图片名称" align=center />
 同样如果输入`cloudmusic`，那么电脑就会打开网易云音乐，如果你设置了打开就自动播放，那么那么你就实现了移动端远程操作播放音乐。
 
 最后，你躺在床上在手机上输入`shutdown /p`,你的电脑就自动关机了，是不是很方便呢。
