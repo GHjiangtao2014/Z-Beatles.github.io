@@ -1,20 +1,26 @@
 <h3 class="sidebar-title">Blog Categories</h3>
 <div id="blog-categories">
     <ul class="list-group">
-        {% for category in site.categories %}
-        <a href="#">
-        <li class="list-group-item">
-            {{ category | first }}
-            <span class="badge">{{ category[1].size }}</span>
-            
-        </li>
-        </a>
-        {% endfor %}
+        {% for category in site.categories %}  
+    <li class="list-group-itemm"><a href="/showCategory.html?categoryName={{ category | first }}">{{ category | first }}</a> ({{ category | last | size }})  
+   <span class="badge">{{ category[1].size }}</span>
+        </li>  
+    {% endfor %}  
     </ul>
 
 </div>
 <script type="text/javascript">
 
+    var articleList = [{% for post in site.posts %}  
+        <span style="white-space:pre">    </span>{"title":"{{post.title}}",  
+            "url":"{{site.url}}{{post.url}}",  
+    <span style="white-space:pre">    </span>   "date":"{{ post.date | date:'%Y-%m-%d' }}",  
+            "excerpt": '{{ post.excerpt | strip_html | strip_newlines | truncate:170 }}'  
+            {% if post.categories != empty %}  
+            ,  
+            "categories":[{% for category in post.categories %}"{{category}}"{% if forloop.last == false %},{% endif %}{% endfor %}]{% endif %}}  
+            {% if forloop.last == false %},{% endif %}{% endfor %}];  
+                                                       
     $(document).ready(function(){
         $("#blog-categories li").css('text-transform','capitalize')
     });
