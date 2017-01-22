@@ -1,10 +1,13 @@
 <h3 class="sidebar-title">Blog Categories</h3>
 <div id="blog-categories">
     <ul class="list-group">
-        {% for category in site.categories %}  
-    <li class="list-group-itemm"><a href="/showCategory.html?categoryName={{ category | first }}">{{ category | first }}</a> ({{ category | last | size }})  
-   <span class="badge">{{ category[1].size }}</span>
-        </li>  
+        {% for category in site.categories %}    
+        <li class="list-group-item">
+            <a href="/showCategory.html?categoryName={{ category | first }}">
+                {{ category | first }}
+                <span class="badge">{{ category[1].size }}</span>
+            </a>
+        </li>
     {% endfor %}  
     </ul>
 
