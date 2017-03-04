@@ -105,4 +105,6 @@ git push <本地仓库名>:<分支名>
 ### 远程推送
 git push origin master
 origin指定了你要push到哪个remote
-master其实是一个“refspec”，正常的“refspec”的形式为”+<src>:<dst>”，冒号前表示local branch的名字，冒号后表示remote repository下 branch的名字。注意，如果你省略了<dst>，git就认为你想push到remote repository下和local branch相同名字的branch。听起来有点拗口，再解释下，push是怎么个push法，就是把本地branch指向的commit push到remote repository下的branch
+master其实是一个“refspec”，正常的“refspec”的形式为”+<src>:<dst>”，冒号前表示local branch的名字，冒号后表示remote repository下 branch的名字。
+注意，如果你省略了<dst>，git就认为你想push到remote repository下和local branch相同名字的branch。
+听起来有点拗口，再解释下，push是怎么个push法，就是把本地branch指向的commit push到remote repository下的branch。
