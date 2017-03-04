@@ -12,13 +12,13 @@ tags: [git & github]
 * 检查是否安装ssh,如果没有则安装
 * 检查是否存在ssh公钥
 
-```linux
+```
 cd ~/.ssh
 ```
 
 ### 安装Git
 
-```linux
+```
 sudo apt-get install git
 ```
 
@@ -34,7 +34,7 @@ ssh-keygen -t rsa -C "your_email@youremail.com"
 
 ### 测试是否生效
 
-```linux
+```
 ssh -T git@github.com
 balabala...
 //输入yes
@@ -45,7 +45,7 @@ You've successfully authenticated, but GitHub does not provide shell access.
 
 ### 配置Git的配置文件
 
-```linux
+```
 //配置用户名
 git config --global user.name "your name" 
 //配置email
@@ -56,7 +56,7 @@ git config --global user.email "your email"
 
 ### 利用Git从本地上传到GitHub
 
-```linux
+```
 cd your-repo
 //生成.git文件
 git init
@@ -72,7 +72,7 @@ git push origin master
 
 ### 从GitHub克隆项目到本地
 
-```linux
+```
 //先clone url
 git "git clone https://github.com/xxx/xxx.git"
 //更新本地仓库
@@ -85,11 +85,11 @@ git pull <本地仓库> master
 
 ### GitHub的分支管理
 
-```linux
+```
 //创建一个本地分支
-git branch <新分支名字>
-//将本地分支同步到GitHub上面
-git push <本地仓库名> <新分支名>
+git branch newbranch
+//将本地分支同步到GitHub上面 （origin 是默认的远程版本库名称）
+git push origin master=git push origin master:master=$ git push git@github.com:Z-Beatles/Z-Beatles.github.io.git master
 //切换到新建立的分支
 git checkout <新分支名>
 //为你的分支加入一个新的远程端
@@ -102,3 +102,7 @@ git branch -d <分支名称>
 git push <本地仓库名>:<分支名>
 
 ```
+### 远程推送
+git push origin master
+origin指定了你要push到哪个remote
+master其实是一个“refspec”，正常的“refspec”的形式为”+<src>:<dst>”，冒号前表示local branch的名字，冒号后表示remote repository下 branch的名字。注意，如果你省略了<dst>，git就认为你想push到remote repository下和local branch相同名字的branch。听起来有点拗口，再解释下，push是怎么个push法，就是把本地branch指向的commit push到remote repository下的branch
