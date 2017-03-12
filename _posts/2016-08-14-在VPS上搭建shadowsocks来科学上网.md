@@ -20,7 +20,7 @@ tags: [shadowsocks]
 
 ## Student Developer Pack
 
-如果你是学生的话，可以前往 [GitHub](https://education.github.com/)，如果你没有GitHub帐号，先注册GitHub，注册完成后点击 I am a student 填写学生验证信息， Verify academic status 一栏选择 
+如果你不是学生，请跳过第一步，如果你是学生的话，可以前往 [GitHub](https://education.github.com/)，如果你没有GitHub帐号，先注册GitHub，注册完成后点击 I am a student 填写学生验证信息， Verify academic status 一栏选择 
 I don't have a school-issued email （第一次我使用学校的 edu 邮箱提交申请当天就被拒绝了，貌似国内edu邮箱没有公信力），然后上传你的学生证照片或者能证明你是学生即可。剩下的就是漫长的等待了，不过这点等待还是很值得的（本人等了接近2天终于收到确认信件）~~~
 
 
@@ -42,9 +42,9 @@ I don't have a school-issued email （第一次我使用学校的 edu 邮箱提�
 
 ### 创建VPS
 
-然后你就可以创建你的VPS了，搭建SS服务器选择 $5/mon 的那最低端的配置，如有你有建站或者其他需求的话另行选择。经过测试San Francisco的机房延迟最低，平均在230ms左右。而Singapore的机房延迟在280ms，还有5%左右的丢包率。所以经过几次创建后又销毁重新创建地倒腾，我最后还是选择了使用San Francisco的节点。另外操作系统的话，我选择的是ubuntu的，看个人喜好选择吧。
+然后你就可以创建你的VPS了，搭建SS服务器选择 $5/mon 的那最低端的配置，如有你有建站或者其他需求的话另行选择。经过测试Singapore的机房延迟最低并且下载速度和延迟都很好。而其他的的机房延迟都很高，还有丢包情况。所以经过几次创建后又销毁重新创建地倒腾，我最后还是选择了使用Singapore的节点。另外操作系统的话，我选择的是ubuntu的，看个人喜好选择吧。
 
-Tips:贴一个测速地址，这也是后来找到的。-->  [Digitalocean服务器测速](http://speedtest-sfo2.digitalocean.com/)
+Tips:贴一个测速地址，请根据测速结果选择最合适的机房。 [Digitalocean服务器测速-新加坡机房](http://speedtest-sgp1.digitalocean.com/)
 
 ## ShadowSocks
 
@@ -60,7 +60,7 @@ Tips:贴一个测速地址，这也是后来找到的。-->  [Digitalocean服务
 
 ![这里写图片描述](http://img.blog.csdn.net/20160816163154280)
 
-初次进入需要输入原始的账号密码，账号是root，密码会在注册邮箱中找到（在创建完droplet后发送至邮箱），输入完原始的账号密码后，系统会让你再次输入原始的密码来改变密码，所以又要再次输入三次密码，第一次是原始密码，第二，三次是修改后密码。
+初次进入需要输入原始的账号密码，账号是root，密码会在注册邮箱中找到（在创建完droplet后发送至邮箱），输入完原始的账号密码后，系统会让你再次输入原始的密码来改变密码，所以又要"再次输入三次密码，第一次是原始密码，第二，三次是修改后密码"。
 
 ### 在VPS上安装shadowsocks
 
@@ -75,24 +75,25 @@ pip install shadowsocks
 
 安装完毕之后，需要创建json文件来配置服务器的参数，命令如下：
  
-```shell
+```
 vi  /etc/shadowsocks.json
 ```
 编辑该文件,内容如下：
 
-```shell
+```
 {
-    "server":"0.0.0.0",
-    "server_port":9898,   #服务端口号记好，配置客户端会用到
-    "local_address": "127.0.0.1",
-    "local_port":1080,
-    "password":"password",  #密码记住，配置客户端会用到
-    "timeout":300,
-    "method":"aes-256-cfb"  #加密方式
+    "port_password": {
+        "9898": "这里填写密码"
+       //如果需要多个端口开放连接，可以再增加一个
+        "9001"："填写密码"
+},
+    "method": "aes-256-cfb",
+    "timeout": 600
 }
+
 ```
 
-Tips:点击 i 进入编辑模式,编辑完成后按Esc退出编辑，输入:wq!退出保存。
+Tips:点击 i 进入编辑模式,编辑完成后按Esc退出编辑，输入 **:wq!** 退出保存。
 
 
 ### 后台启动服务端的SS服务
@@ -105,7 +106,8 @@ ssserver -c /etc/shadowsocks.json -d start
 ###  SS客户端下载
 
 前往GitHub托管的[ShadowSocks](https://github.com/shadowsocks)项目下载相应客户端。  
-这里仅贴出windows版本：[下载地址](https://github.com/shadowsocks/shadowsocks-csharp/releases/download/2.5.6/Shadowsocks-win-2.5.6.zip)
+
+这里仅贴出windows版本：[下载地址](https://github.com/shadowsocks/shadowsocks-windows/releases/download/3.4.3/Shadowsocks-3.4.3.zip)
 
 ###  客户端配置
 
@@ -126,6 +128,7 @@ ssserver -c /etc/shadowsocks.json -d start
 ![这里写图片描述](http://img.blog.csdn.net/20160819235904373)
 
 
-> 如有疑问请留言或者给我来信。  再随手打波广告：需要SS帐号的可以联系我，可提供SS帐号，价格实惠速度有保证，可先试用再确定是否购买。      　　------ Emailto: waynechu@waynechu.cn
+> 如有疑问请留言或者给我来信。  再随手打波广告：需要SS帐号的可以联系我，可提供SS帐号，价格实惠速度有保证
+>------ Emailto: waynechu@waynechu.cn
 
 文章来自:  [拓扑部落（topblog.top）>>](http://www.topblog.top) [在VPS上搭建shadowsocks来科学上网](http://www.topblog.top/?p=60)
