@@ -17,7 +17,7 @@ menu: Bookmark
 - [Java 并发编程实战](http://www.topblog.top/books/) - 本书深入浅出地介绍了Java线程和并发，是一本完美的Java并发参考手册。  
 - [深入理解Java虚拟机-JVM高级特性与最佳实践(第2版)-周志明](http://www.topblog.top/books/) - 本同时从核心理论和实际运用这两个角度去探讨Java虚拟机的著作，不仅理论分析得透彻，而且书中包含的典型案例和最佳实践也极具现实指导意义。  
 - [HotSpot实战](http://www.topblog.top/books/) - 本书深入浅出地讲解了HotSpot虚拟机的工作原理，将隐藏在它内部的本质内容逐一呈现在读者面前，包括OpenJDK与HotSpot项目、编译和调试HotSpot的方法、HotSpot内核结构、Launcher、OOP-Klass对象表示系统、链接、运行时数据区、方法区、常量池和常量池Cache、Perf Data、Crash分析方法、转储分析方法、垃圾收集器的设计演进、CMS和G1收集器、栈、JVM对硬件寄存器的利用、栈顶缓存技术、解释器、字节码表、转发表、Stubs、Code Cache、Code生成器、JIT编译器、C1编译器、编译原理、JVM指令集实现、函数的分发机制、VTABLE和ITABLE、异常表、虚拟机监控工具（如jinfo、jstack、jhat、jmap等）的实现原理和开发方法、Attach机制、基于GUI的JVM分析工具（如MAT、VisualVM）等内容。  
-- [重构-改善既有代码的设计]http://www.topblog.top/books/) - 本书解释重构的原理（principles）和最佳实践方式（best practices），并指出何时何地你应该开始挖掘你的代码以求改善。
+- [重构-改善既有代码的设计](http://www.topblog.top/books/) - 本书解释重构的原理（principles）和最佳实践方式（best practices），并指出何时何地你应该开始挖掘你的代码以求改善。
 
 
 ## Fonts
