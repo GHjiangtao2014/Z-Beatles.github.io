@@ -6,13 +6,16 @@ tags: [Apache2]
 ---
 
 ## apache2.conf的配置
+
 开发时经常需要配置多个站点，并经常进行切换。
 以前的做法是在httpd.conf里include所有的配置文件，不需要的时候进行注释，例如：
+
 ```
 include conf/site.conf
 #include conf/default.conf
 include conf/spider.conf
 ```
+
 这样需要先定位到`httpd.conf`的目录，然后使用编辑器打开、修改、然后保存，比较麻烦。
 现在可以在`apache2.conf`里include所有的配置文件。  
 ![apache2.conf](http://img.blog.csdn.net/20161226202151823)
@@ -24,7 +27,9 @@ include conf/spider.conf
  ![sites-available目录](http://img.blog.csdn.net/20161226202246480)  
  
 `/etc/apache2/sites-enable`  目录下存放已经生效的VirtualHost配置文件的符号链接(Symbolic Link)，也就是常说的快捷方式啦，该链接指向sites-available下的同名文件。
+
 ![sites-enable目录](http://img.blog.csdn.net/20161226202338261)  
+
 使用命令`a2ensite`可以将`sites-available`目录下的配置文件生效，并且生效后会自动在`sites-enable`目录下创建同名链接。
 使用命令`a2dissite`可以将`sites-enable`目录下的配置文件链接失效并自动删除该链接。
 通过`a2dissite`和`a2ensite`，我们可以快速激活/屏蔽站点，加快开发和部署效率。
