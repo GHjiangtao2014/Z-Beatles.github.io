@@ -21,7 +21,8 @@ include conf/spider.conf
 
 另外Apache还提供了方便的工具来管理配置文件，就是`a2ensite`和`a2dissite`，它们都在`apache2-common`包里。
 `/etc/apache2/sites-available` 目录下存放可用的VirtualHost配置文件  
- ![sites-available目录](http://img.blog.csdn.net/20161226202246480)
+ ![sites-available目录](http://img.blog.csdn.net/20161226202246480)  
+ 
 `/etc/apache2/sites-enable`  目录下存放已经生效的VirtualHost配置文件的符号链接(Symbolic Link)，也就是常说的快捷方式啦，该链接指向sites-available下的同名文件。
 ![sites-enable目录](http://img.blog.csdn.net/20161226202338261)  
 使用命令`a2ensite`可以将`sites-available`目录下的配置文件生效，并且生效后会自动在`sites-enable`目录下创建同名链接。
