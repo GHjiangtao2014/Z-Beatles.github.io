@@ -29,6 +29,8 @@ var windowScroll = function () {
                    var y=document.getElementById("icon");
                    a.parentNode.removeChild(b);
                    x.parentNode.removeChild(y);
+                } catch (e) {
+                   alert(e.name + ": " + e.message);
                 }
                 $('.site-header').addClass('site-header-nav-scrolled-mt');
             } else {
