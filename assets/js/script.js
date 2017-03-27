@@ -22,16 +22,6 @@ var windowScroll = function () {
             //如果是手机访问则将顶栏移除界面
             if ($(window).scrollTop() > 40) 
             {
-                try{
-                   var a=document.getElementById("row");//获取父节点
-                   var b=document.getElementById("sidebar-post-nav");//获取需要删除的子节点
-                   var x=document.getElementById("link");//获取父节点
-                   var y=document.getElementById("icon");
-                   a.parentNode.removeChild(b);
-                   x.parentNode.removeChild(y);
-                } catch (e) {
-                   alert(e.name + ": " + e.message);
-                }
                 $('.site-header').addClass('site-header-nav-scrolled-mt');
             } else {
                 $('.site-header').removeClass('site-header-nav-scrolled-mt');
