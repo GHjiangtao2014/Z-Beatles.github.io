@@ -19,7 +19,10 @@ var windowScroll = function () {
                 $('.site-header').removeClass('site-header-nav-scrolled');
             }
         }else{
-            //跳转语句，如果是手机访问就自动跳转到则将顶栏移除界面
+               var a=document.getElementById("row");//获取父节点
+               var b=document.getElementById("sidebar-post-nav");//获取需要删除的子节点
+               a.parentNode.removeChild(b);
+            //如果是手机访问则将顶栏移除界面
             if ($(window).scrollTop() > 40) 
             {
                 $('.site-header').addClass('site-header-nav-scrolled-mt');
