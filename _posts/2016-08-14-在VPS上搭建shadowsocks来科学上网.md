@@ -66,9 +66,10 @@ Tips:贴一个测速地址，请根据测速结果选择最合适的机房。 [
 输入以下命令安装shadowsocks：
 
 ```
+# apt-get update
 # apt-get install python-pip
 // 询问是否Continue，输入y确认
-# pip install git+https://github.com/shadowsocks/shadowsocks.git@master
+# pip install shadowsocks
 ```
 
 ### 启动的SS服务
