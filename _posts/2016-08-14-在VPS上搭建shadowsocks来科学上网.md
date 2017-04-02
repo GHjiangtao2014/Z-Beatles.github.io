@@ -102,6 +102,5 @@ sudo ssserver -p 443 -k yourpassword -m aes-256-cfb --user nobody -d start
 ![这里写图片描述](http://img.blog.csdn.net/20160819235904373)
 
 
-> 如有疑问请留言或者给我来信。
-
+> 如有疑问请留言或者给我来信。 Email:  waynechu@waynechu.cn
 文章来自:  [拓扑部落（topblog.top）>>](http://www.topblog.top) [在VPS上搭建shadowsocks来科学上网](http://www.topblog.top/?p=60)
