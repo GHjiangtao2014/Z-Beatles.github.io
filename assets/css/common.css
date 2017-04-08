@@ -33,6 +33,7 @@
 
 .site-header a {
     text-decoration: none;
+    font-weight: bold;
 }
 
 .site-header a:hover {
