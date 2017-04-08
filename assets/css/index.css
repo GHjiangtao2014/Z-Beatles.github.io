@@ -2,7 +2,8 @@
 
 .site-header{
     color: #fff;
-    background: #137;
+    background: #111;
+    opacity: 0.6;
 }
 
 .site-header #site-header-brand {
