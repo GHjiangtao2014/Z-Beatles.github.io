@@ -13,10 +13,10 @@ location: Jiangxi, China
 company: Henan University
 company_url: http://www.henu.edu.cn/
 github_url: https://github.com/Z-Beatles
-description: This is personnel website of Wayne Chu | 个人博客，用于记录学习笔记，分享经验
+description: This is a personal website of Wayne Chu | 个人博客，用于记录学习笔记
 favicon: favicon.png # Image must be in assets/images
 
-url: http://www.waynechu.cn # the base hostname & protocol for your site
+url: http://waynechu.cn # the base hostname & protocol for your site
 
 ## Gem
 gems:
@@ -43,7 +43,7 @@ kramdown:
   enable_coderay: true
 
 # Disque
-# disque:  
+# disque:
 
 
 # Pagination
