@@ -31,7 +31,7 @@ Handler handler = new Handler(){
 }
 {% endhighlight %}
 
-或者使用 `Handler.Callback()` 在处理消息之前加入一些前置的判断: 
+或者使用 `Handler.Callback()` 在处理消息之前加入一些前置的判断:
 
 {% highlight java %}
 Handler handler = new Handler(new Handler.Callback() {
@@ -53,7 +53,7 @@ Handler handler = new Handler(new Handler.Callback() {
 在**新的线程**中发送消息, **发送的消息都会进入 Handler 的 `handleMessage()` 方法中**, 即是发送到主线程.
 
 {% highlight java %}
-//第一种 
+//第一种
 Message message = new Message();
 //...arg1,arg2,what,obj相关赋值
 handler.sendMessage(message);
@@ -82,14 +82,14 @@ Handler 一共有四个组件
 
 * **Message**: 是 Handler 接收和处理的消息对象
 * **Looper**: 每个线程只能有一个 Looper. 它的 loop 方法负责读取 MessageQueue 中的消息, 读到消息之后就把消息交给发送该消息的 Handler 进行处理.
-* **MessageQueue**: 消息队列. 它采用先进先出的方式来管理 Message. 程序创建 Looper 对象时, 会在它的构造器中创建 MessageQueue 对象. 
-* **Handler**: 就是之前描述的发送消息和处理消息. 
+* **MessageQueue**: 消息队列. 它采用先进先出的方式来管理 Message. 程序创建 Looper 对象时, 会在它的构造器中创建 MessageQueue 对象.
+* **Handler**: 就是之前描述的发送消息和处理消息.
 
 ### 流程图
 
 当新启动的线程发送消息时, 消息会发送到与之关联的 MessageQueue, 而 Handler 会不断地从 MessageQueue 中获取并处理消息. 这将导致 Handler 类中处理消息的方法被回调. 这个方法处于主线程, 从而更新 UI.
 
-![handler流程图.png](http://DONGChuan.github.io/assets/images/handler-process.png)
+![handler流程图.png](http:/www.topblog.top/download/handler-process.png)
 
 既然 MessageQueue 是被 Looper 创建的, 那我们需不需要手动创建这个 Looper 对象呢?
 

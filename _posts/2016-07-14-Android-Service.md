@@ -16,7 +16,7 @@ Service, 四大组件之一, 是一个可以在后台执行长时间运行操作
 
 ### 区别
 
-* startService 只是启动服务, 启动它的组件（如 Activity）和服务并没有关联, 只有当服务调用 `stopSelf()` 或者其他组件调用 `stopService()` 时服务才会终止. 
+* startService 只是启动服务, 启动它的组件（如 Activity）和服务并没有关联, 只有当服务调用 `stopSelf()` 或者其他组件调用 `stopService()` 时服务才会终止.
 
 * bindService 方法启动服务, 其它组件可以通过回调获取服务的代理对象**和服务交互**, 而这两方也进行了**绑定**, 当启动方销毁时, 服务也会自动进行 `unBind` 操作, 当发现所有绑定都进行了 `unBind` 时才会销毁服务.
 
@@ -24,7 +24,7 @@ Service, 四大组件之一, 是一个可以在后台执行长时间运行操作
 
 通过 startService 与 bindService 两种方式启动的 Service 的生命周期
 
-![service生命周期.jpg](http://DONGChuan.github.io/assets/images/service-life-cycle.jpg)
+![service生命周期.jpg](http://www.topblog.top/download/service-life-cycle.jpg)
 
 ## 启动服务
 
@@ -39,9 +39,9 @@ Service, 四大组件之一, 是一个可以在后台执行长时间运行操作
 AndroidManifest.xml 里注册服务类.
 
 {% highlight java %}
-<service 
-    android:name=".service.MyService" 
-    android:enabled="true" 
+<service
+    android:name=".service.MyService"
+    android:enabled="true"
     android:exported="false">
 </service>
 {% endhighlight %}
@@ -53,16 +53,16 @@ AndroidManifest.xml 里注册服务类.
 
 {% highlight java %}
 Intent intent = new Intent(this, MyService.class);
-startService(intent); 
+startService(intent);
 {% endhighlight %}
 
 #### 停止服务
 
-通过外部组件: 
+通过外部组件:
 
 {% highlight java %}
 Intent intent = new Intent(this, MyService.class);
-stopService(intent); 
+stopService(intent);
 {% endhighlight %}
 
 或者通过服务自身
@@ -79,17 +79,17 @@ stopSelf();
 
 返回的值必须是以下常量之一:
 
-* START_STICKY 
+* START_STICKY
 
 如果服务在开始后 (`onStartCommand()` 返回后) 被终止, 比如内存不足, 然后会保持已开始状态 (started state), 但是并不保留接收的 intent. 稍后当系统有足够内存时会自己尝试重新创建服务. 因为服务仍处于已开始状态, 所以重建后会调用 `onStartCommand()` 方法. **但是除非此时有挂起的 intent 要启动服务, 不然传递的 intent 为 null.** 使用此方式需要在代码中考虑处理 null 的情况.
 
-该模式主要用于可以在任意的时间段显示的开始和结束服务, 比如后台的音乐播放服务. 
+该模式主要用于可以在任意的时间段显示的开始和结束服务, 比如后台的音乐播放服务.
 
-* START_NOT_STICKY 
+* START_NOT_STICKY
 
 如果服务在开始后 (`onStartCommand()` 返回后) 被终止, 但是不会保持已开始状态. 系统也不会再自建该服务. 只能通过显示的调用 `startService(Intent)` 来重新创建服务. 这是最安全的选项, 可以**避免在不必要时以及应用能够轻松重启所有未完成的作业时运行服务**.
 
-* START_REDELIVER_INTENT 
+* START_REDELIVER_INTENT
 如果服务在开始后 (`onStartCommand()` 返回后) 被终止, 则会重建服务, 并且传入最后一个接收的 intent 到 `onStartCommand()`. 这适用于主动执行应该立即恢复的服务(例如下载文件).
 
 小结:
@@ -138,26 +138,26 @@ public class BindService extends Service{
 同 `startService` 一样需要在 AndroidManifest.xml 里进行注册.
 
 {% highlight java %}
-<service 
-    android:name=".BindService" 
-    android:enabled="true" 
+<service
+    android:name=".BindService"
+    android:enabled="true"
     android:exported="false">
 </service>
 {% endhighlight %}
 
 #### 创建 ServiceConnection 实例
 
-在调用 `onBind()` 方法时需要传入一个 `ServiceConnection` 对象: 
+在调用 `onBind()` 方法时需要传入一个 `ServiceConnection` 对象:
 
 {% highlight java %}
-private ServiceConnection mConnection = new ServiceConnection() { 
-  public void onServiceConnected(ComponentName className, IBinder service) { 
-    // 当与服务的连接建立时调用. 
+private ServiceConnection mConnection = new ServiceConnection() {
+  public void onServiceConnected(ComponentName className, IBinder service) {
+    // 当与服务的连接建立时调用.
     // 传入的 IBinder 将用作与服务通信
-  } 
+  }
 
-  public void onServiceDisconnected(ComponentName className) { 
-    // 当由于异常, 与服务失去连接时调用. 
+  public void onServiceDisconnected(ComponentName className) {
+    // 当由于异常, 与服务失去连接时调用.
   }
 };
 {% endhighlight %}

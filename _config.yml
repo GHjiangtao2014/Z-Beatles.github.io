@@ -15,8 +15,6 @@ company_url: http://www.henu.edu.cn/
 github_url: https://github.com/Z-Beatles
 description: This is a personal website of Wayne Chu | 个人博客，用于记录学习笔记
 favicon: favicon.png # Image must be in assets/images
-timezone: Asia/Shanghai
-encoding: zh-CN
 url: http://waynechu.cn # the base hostname & protocol for your site
 
 ## Gem
