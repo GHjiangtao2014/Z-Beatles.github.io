@@ -3,7 +3,7 @@ var windowScroll = function () {
     $(window).scroll(function () {
 
         var scrollPos = $(this).scrollTop();
-        
+
         var system ={win : false,mac : false,xll : false};
         //检测平台
         var p = navigator.platform;
@@ -22,9 +22,9 @@ var windowScroll = function () {
             //如果是手机访问则将顶栏移除界面
             if ($(window).scrollTop() > 40) 
             {
-                $('.site-header').addClass('site-header-nav-scrolled-mt');
+                $('.site-header').addClass('site-header-nav-scrolled-ph');
             } else {
-                $('.site-header').removeClass('site-header-nav-scrolled-mt');
+                $('.site-header').removeClass('site-header-nav-scrolled-ph');
             }
         }
  });
