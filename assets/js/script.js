@@ -29,6 +29,9 @@ var windowScroll = function () {
             // 移除底部 mega-octicon octicon-mark-github 图标
             var icon =document.getElementById("mega-octicon octicon-mark-github");
             icon.parentNode.removeChild(icon);
+            // 移除侧面导航
+            var directory =document.getElementById("post-directory-module");
+            directory.parentNode.removeChild(directory);
         }
  });
 };
