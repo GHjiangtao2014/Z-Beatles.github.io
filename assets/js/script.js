@@ -26,9 +26,6 @@ var windowScroll = function () {
             } else {
                 $('.site-header').removeClass('site-header-nav-scrolled-ph');
             }
-            // 移除底部 mega-octicon octicon-mark-github 图标
-            var icon =document.getElementById("bbs");
-            icon.removeClass("mega-octicon octicon-mark-github");
         }
  });
 };
