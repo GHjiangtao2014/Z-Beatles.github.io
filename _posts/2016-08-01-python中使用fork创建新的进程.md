@@ -13,11 +13,11 @@ import os
 import time
 
 try:
-	forkpid = os.fork()
-	time.sleep(3)
-	print type(forkpid)
+    forkpid = os.fork()
+    time.sleep(3)
+    print type(forkpid)
 except OSError:
-	sys.exit('Unable to fork.')
+    sys.exit('Unable to fork.')
 ```
 
 输出如下
@@ -29,7 +29,7 @@ wayne@Z-Beatles:~/python$ python demo
 ```
 
 3秒后可见fork的返回值是两个int型数值
-	 
+    
 ## python运行时创建进程
 当python脚本运行，系统会生成一个新的进程。先看下面代码：
 
@@ -99,7 +99,7 @@ try:
     if pid == 0:  #子进程
         source = source - 1
         sleep(4)
-		print "this is child process.source is %d" %source
+        print "this is child process.source is %d" %source
     else: 
         print "this is parent process.source is %d" %source
 except OSError, e:

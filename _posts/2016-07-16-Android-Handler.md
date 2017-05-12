@@ -22,7 +22,7 @@ Handler 主要有 2 个作用:
 
 {% highlight java %}
 Handler handler = new Handler(){
-	@Override
+    @Override
     public void handleMessage(Message msg) {
         super.handleMessage(msg);
         // 处于主线程

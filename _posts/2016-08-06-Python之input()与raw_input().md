@@ -50,7 +50,7 @@ input: 123
 input([prompt])
     Equivalent to eval(raw_input(prompt)) 
 ```
-	
+    
 * input() 本质上还是使用 raw_input() 来实现的，只是调用完 raw_input() 之后再调用 eval() 函数，所以，你甚至可以将表达式作为 input() 的参数，并且它会计算表达式的值并返回它。  
 * 不过在 Built-in Functions 里有一句话是这样写的：Consider using the raw_input() function for general input from users.  
 * 除非对 input() 有特别需要，否则一般情况下我们都是推荐使用 raw_input() 来与用户交互。  
