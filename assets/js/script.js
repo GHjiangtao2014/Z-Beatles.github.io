@@ -20,12 +20,15 @@ var windowScroll = function () {
             }
         }else{
             //如果是手机访问则将顶栏移除界面
-            if ($(window).scrollTop() > 40) 
+            if ($(window).scrollTop() > 40)
             {
                 $('.site-header').addClass('site-header-nav-scrolled-ph');
             } else {
                 $('.site-header').removeClass('site-header-nav-scrolled-ph');
             }
+            // 移除底部 mega-octicon octicon-mark-github 图标
+            var icon =document.getElementById("bbs");
+            icon.style.visibility="visible";
         }
  });
 };
