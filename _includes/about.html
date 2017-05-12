@@ -108,17 +108,16 @@
             </div>
         </div>
         {% endif %}
+
+        <br/>
+        <hr>
+        <h2  id="jump">留言板</h2>
+        <br/>
+        <!-- Comments-->
+        {% include disqus-comments.html %}
     </div>
-
-    <br/>
-    <hr>
-    <h2  id="jump">留言板</h2>
-    <br/>
-    <!-- Comments-->
-    {% include disqus-comments.html %}
-
+    
     <div class="col-md-4">
         {% include sidebar-popular-repo.html %}
     </div>
-
 </div>
