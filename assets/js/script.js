@@ -28,7 +28,7 @@ var windowScroll = function () {
             }
             // 移除底部 mega-octicon octicon-mark-github 图标
             var icon =document.getElementById("bbs");
-            icon.style.visibility="visible";
+            icon.style.visibility="none";
         }
  });
 };
