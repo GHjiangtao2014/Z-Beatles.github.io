@@ -2,7 +2,7 @@
 
 .site-header{
     color: #fff;
-    background: #111;
+    background: #4183c4;
 }
 
 .site-header #site-header-brand {
@@ -10,15 +10,15 @@
 }
 
 .site-header .site-header-nav-item {
-    color: #fff;
-}
-
-.site-header a:hover {
     color: #9acfea;
 }
 
+.site-header a:hover {
+    color: #fff;
+}
+
 .jumbotron {
-     background:url(http://www.topblog.top/download/bg.jpg);
+    background: #4183c4;
 }
 
 .site-header.site-header-nav-scrolled a {
