@@ -15,10 +15,10 @@ subtitle:
                 <span class="flag-icon flag-icon-cn"></span> 中文
             </a>
             <h4>注：由于个人简历暂未制作，临时内容仅供参考。</h4>
-            
-            <h3><a class="pull-right hvr-grow" href="#jump"><span class="mega-octicon octicon-mail"></span>   给我留言</a></h3>
-                            
-                            
+
+            <h3><a class="pull-left hvr-grow" href="#jump"><span class="mega-octicon octicon-mail"></span>   给我留言</a></h3>
+
+
 css: ['about.css', 'sidebar-popular-repo.css', '../../bower_components/flag-icon-css/css/flag-icon.min.css']
 ---
 
