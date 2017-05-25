@@ -34,8 +34,6 @@ tags: [shadowsocks]
 
 ![这里写图片描述](http://img.blog.csdn.net/20160816161413413)
 
-* 这里请参考
-
 * 如果你已经获得了了第一步的Student Developer Pack，那么可以在注册成功后在Settings->Billing下找到Promo Code，输入你在Student Developer Pack获得的学生优惠码，价值50刀，这对于屌丝学生来说可是笔不小的数目。
 
 ### 创建VPS
