@@ -66,16 +66,16 @@ Tips:贴一个测速地址，请根据测速结果选择最合适的机房。 [
 输入以下命令安装shadowsocks：
 
 ```shell
-# apt-get update
-# apt-get install python-pip
-// 询问是否Continue，输入y确认
-# pip install shadowsocks
+apt-get update
+apt-get install python-pip
+# 询问是否Continue，输入y确认
+pip install shadowsocks
 ```
 
 ### 创建配置文件
 
 ```shell
-# sudo vim /etc/shadowsocks.json
+sudo vim /etc/shadowsocks.json
 ```
 
 按a键进入编辑模式，输入以下配置项
@@ -97,19 +97,19 @@ Tips:贴一个测速地址，请根据测速结果选择最合适的机房。 [
 后台启动ss服务
 
 ```shell
-# sudo ssserver -c /etc/shadowsocks.json -d start 
+sudo ssserver -c /etc/shadowsocks.json -d start 
 ```
 
 关闭ss服务
 
 ```shell
-# sudo ssserver -d stop
+sudo ssserver -d stop
 ```
 
 或者直接在启动时加入相关配置参数，无需配置启动文件
 
 ```shell
-# sudo ssserver -p 443 -k yourpassword -m aes-256-cfb --user nobody -d start
+sudo ssserver -p 443 -k yourpassword -m aes-256-cfb --user nobody -d start
 ```
 
 ###  SS客户端下载
