@@ -65,7 +65,7 @@ Tips:贴一个测速地址，请根据测速结果选择最合适的机房。 [
 
 输入以下命令安装shadowsocks：
 
-```
+```shell
 # apt-get update
 # apt-get install python-pip
 // 询问是否Continue，输入y确认
@@ -74,16 +74,16 @@ Tips:贴一个测速地址，请根据测速结果选择最合适的机房。 [
 
 ### 创建配置文件
 
-```
-sudo vim /etc/shadowsocks.json
+```shell
+# sudo vim /etc/shadowsocks.json
 ```
 
 按a键进入编辑模式，输入以下配置项
 
-```
+```json
 {
     "port_password":{
-        "443"："yourpassword"
+        "443":"yourpassword"
     },
     "method":"aes-256-cfb",
     "timeout":600
@@ -96,20 +96,20 @@ sudo vim /etc/shadowsocks.json
 
 后台启动ss服务
 
-```
-sudo ssserver -c /etc/shadowsocks.json -d start 
+```shell
+# sudo ssserver -c /etc/shadowsocks.json -d start 
 ```
 
 关闭ss服务
 
-```
-sudo ssserver -d stop
+```shell
+# sudo ssserver -d stop
 ```
 
 或者直接在启动时加入相关配置参数，无需配置启动文件
 
 ```shell
-sudo ssserver -p 443 -k yourpassword -m aes-256-cfb --user nobody -d start
+# sudo ssserver -p 443 -k yourpassword -m aes-256-cfb --user nobody -d start
 ```
 
 ###  SS客户端下载
@@ -135,4 +135,6 @@ sudo ssserver -p 443 -k yourpassword -m aes-256-cfb --user nobody -d start
 
 ![youtube](http://img.blog.csdn.net/20160819235904373)
 
+
 > 如有疑问请留言或者给我来信。 E-mail:  waynechu@waynechu.cn
+
