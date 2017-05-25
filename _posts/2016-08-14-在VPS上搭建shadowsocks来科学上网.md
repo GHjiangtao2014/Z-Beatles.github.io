@@ -72,7 +72,41 @@ Tips:贴一个测速地址，请根据测速结果选择最合适的机房。 [
 # pip install shadowsocks
 ```
 
-### 启动的SS服务
+### 创建配置文件
+
+```
+sudo vim /etc/shadowsocks.json
+```
+
+按a键进入编辑模式，输入以下配置项
+
+```
+｛
+    "port_password":{
+        "443"："yourpassword"
+    },
+    "method":"aes-256-cfb",
+    "timeout":600
+｝
+```
+
+然后按esc键退出编辑模式，输入  **:wq**  保存配置文件  
+
+### 启动SS服务
+
+后台启动ss服务
+
+```
+sudo ssserver -c /etc/shadowsocks.json -d start 
+```
+
+关闭ss服务
+
+```
+sudo ssserver -d stop
+```
+
+或者直接在启动时加入相关配置参数，无需配置启动文件
 
 ```
 sudo ssserver -p 443 -k yourpassword -m aes-256-cfb --user nobody -d start
@@ -86,23 +120,19 @@ sudo ssserver -p 443 -k yourpassword -m aes-256-cfb --user nobody -d start
 
 ###  客户端配置
 
-服务器->添加->填入以下项:
+客户端栏目填入以下项:
 
 ```
 服务器地址：你的服务器IP
-服务器端口：443
+服务器端口：443    # 或者自定义端口，注意与开放的端口要一致
 密码： "yourpassword"
 加密： "aes-256-cfb"
 ```
 
-配置完成后在托盘图标里勾选启动代理，就可以访问外网，获取你所需要的资源了。
-
+配置完成后在记得托盘图标里勾选启动系统代理，就可以访问外网，获取你所需要的资源了。
 
 贴张图表示下 ---> YouTube 1080P 毫无压力
 
-![这里写图片描述](http://img.blog.csdn.net/20160819235904373)
+![youtube](http://img.blog.csdn.net/20160819235904373)
 
-
-> 如有疑问请留言或者给我来信。 Email:  waynechu@waynechu.cn   
-
-文章来自:  [拓扑部落（topblog.top）>>](http://www.topblog.top) [在VPS上搭建shadowsocks来科学上网](http://www.topblog.top/?p=60)
+> 如有疑问请留言或者给我来信。 E-mail:  waynechu@waynechu.cn
