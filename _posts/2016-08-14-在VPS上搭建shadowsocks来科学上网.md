@@ -26,23 +26,23 @@ tags: [shadowsocks]
 
 ![这里写图片描述](http://img.blog.csdn.net/20160816164637677)
 
-##  Digital Ocean
+##  DigitalOcean
 
 ### 注册DO帐号
 
-首先注册Digital Ocean账号。可以点击我的[邀请链接](https://m.do.co/c/6d3c33c4b39e)注册，激活后就会收到$10的奖励，但是仅仅这样还是无法在Digital Ocean上创建虚拟主机。你需要绑定信用卡或者使用PayPal添加银行卡，作为国内用户建议不要使用国内信用卡，有说会不成功，导致账号直接废了。通过paypal充值的方法验证账户的好处是如果有纠纷可以通过paypal纠纷申请退款，并且paypal资金安全性要好于信用卡绑定。PayPal需要支付$5才能完成注册流程。我是在paypal账号上绑定了一张银联的卡来付款的，$5按汇率大概￥33多一点吧。
+首先注册DigitalOcean账号。可以点击我的[邀请链接](https://m.do.co/c/6d3c33c4b39e)注册，激活后就会收到$10的奖励，但是仅仅这样还是无法在DigitalOcean上创建虚拟主机。你需要绑定信用卡或者使用PayPal添加银行卡，作为国内用户建议不要使用国内信用卡，有说会不成功，导致账号直接废了。通过paypal充值的方法验证账户的好处是如果有纠纷可以通过paypal纠纷申请退款，并且paypal资金安全性要好于信用卡绑定。PayPal需要支付$5才能完成注册流程。我是在paypal账号上绑定了一张银联的卡来付款的，$5按汇率大概￥33多一点吧。
 
 ![这里写图片描述](http://img.blog.csdn.net/20160816161413413)
 
-* 具体方法参考[Digitalocean VPS注册和使用详细中文教程](http://www.hi8688.com/695.html) 的前四个步骤就好。
+* 这里请参考
 
 * 如果你已经获得了了第一步的Student Developer Pack，那么可以在注册成功后在Settings->Billing下找到Promo Code，输入你在Student Developer Pack获得的学生优惠码，价值50刀，这对于屌丝学生来说可是笔不小的数目。
 
 ### 创建VPS
 
-然后你就可以创建你的VPS了。操作系统的话，我选择的是ubuntu的，看个人喜好选择吧。搭建SS服务器选择 $5/mon 的最低端的配置就够了，如有你有建站或者其他需求的话另行选择。经过测试在国内使用Singapore的机房是最优的选择，而其他的的机房延迟都很高。最后点击Create创建。
+注册成功之后就可以登录DigitalOcean并创建你的VPS了。操作系统的话，我选择的是ubuntu的，看个人喜好选择吧。服务器选择 $5/mon 的最低端的配置就够了，如有你有建站或者其他需求的话另行选择。经过测试在国内使用Singapore的机房是最优的选择，而其他的的机房延迟都很高。最后点击Create创建。
 
-Tips:贴一个测速地址，请根据测速结果选择最合适的机房。 [Digitalocean服务器测速-新加坡机房](http://speedtest-sgp1.digitalocean.com/)
+Tips:贴一个测速地址，请根据测速结果选择最合适的机房。 [Digitalocean服务器测速-新加坡节点](http://speedtest-sgp1.digitalocean.com/)
 
 ## ShadowSocks
 
@@ -52,7 +52,7 @@ Tips:贴一个测速地址，请根据测速结果选择最合适的机房。 [
 
 ### 配置shadowsocks服务端
 
-创建成功后，在你的 droplets 控制面板上的服务器名后点击下拉 more ，再点击 accessv console 进入远程终端的连接。  ，
+创建成功后，在你的 droplets 控制面板上的服务器名后点击下拉 more ，再点击 accessv console 进入远程终端的连接。
 ![这里写图片描述](http://img.blog.csdn.net/20160816163553145)
 
 *  Tips:记下你的服务器IP地址，配置SS客户端会用到。
@@ -81,16 +81,16 @@ sudo vim /etc/shadowsocks.json
 按a键进入编辑模式，输入以下配置项
 
 ```
-｛
+{
     "port_password":{
         "443"："yourpassword"
     },
     "method":"aes-256-cfb",
     "timeout":600
-｝
+}
 ```
 
-然后按esc键退出编辑模式，输入  **:wq**  保存配置文件  
+然后按esc键退出编辑模式，输入  **:wq**  保存配置文件
 
 ### 启动SS服务
 
@@ -108,7 +108,7 @@ sudo ssserver -d stop
 
 或者直接在启动时加入相关配置参数，无需配置启动文件
 
-```
+```shell
 sudo ssserver -p 443 -k yourpassword -m aes-256-cfb --user nobody -d start
 ```
 
@@ -116,13 +116,13 @@ sudo ssserver -p 443 -k yourpassword -m aes-256-cfb --user nobody -d start
 
 前往GitHub托管的[ShadowSocks](https://github.com/shadowsocks)项目下载相应客户端。  
 
-这里仅贴出windows版本：[下载地址](https://github.com/shadowsocks/shadowsocks-windows/releases/download/3.4.3/Shadowsocks-3.4.3.zip)
+这里仅贴出windows版本：[下载地址](https://github.com/shadowsocks/shadowsocks-windows/releases)
 
 ###  客户端配置
 
 客户端栏目填入以下项:
 
-```
+```shell
 服务器地址：你的服务器IP
 服务器端口：443    # 或者自定义端口，注意与开放的端口要一致
 密码： "yourpassword"
