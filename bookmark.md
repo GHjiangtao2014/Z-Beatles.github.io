@@ -29,7 +29,8 @@ Sun认证Java程序员考试指导书(英文版)。
 本书深入浅出地讲解了HotSpot虚拟机的工作原理，将隐藏在它内部的本质内容逐一呈现在读者面前，包括OpenJDK与HotSpot项目、编译和调试HotSpot的方法、HotSpot内核结构、Launcher、OOP-Klass对象表示系统、链接、运行时数据区、方法区、常量池和常量池Cache、Perf Data、Crash分析方法、转储分析方法、垃圾收集器的设计演进、CMS和G1收集器、栈、JVM对硬件寄存器的利用、栈顶缓存技术、解释器、字节码表、转发表、Stubs、Code Cache、Code生成器、JIT编译器、C1编译器、编译原理、JVM指令集实现、函数的分发机制、VTABLE和ITABLE、异常表、虚拟机监控工具（如jinfo、jstack、jhat、jmap等）的实现原理和开发方法、Attach机制、基于GUI的JVM分析工具（如MAT、VisualVM）等内容。  
 - [重构-改善既有代码的设计](http://www.topblog.top/books/)  
 本书解释重构的原理（principles）和最佳实践方式（best practices），并指出何时何地你应该开始挖掘你的代码以求改善。
-
+- [Java虚拟机规范(Java_SE_7)-中文翻译版](http://www.topblog.top/books/)  
+《Java虚拟机规范(Java SE 7版)》是Java领域最重要和最权威的著作之一，由Oracle官方发布，基于Java SE 7，对最新的Java虚拟机规范进行了完整且详细的讲解，是深度了解Java虚拟机实现细节的必读之作。
 
 ## Fonts
 - [Google Fonts](https://www.google.com/fonts) - So it's google fonts :D
