@@ -26,7 +26,7 @@ gems:
   - jekyll-github-metadata
 
 # Build settings
-markdown: kramdown
+#markdown: kramdown
 highlighter: rouge
 lsi: false
 excerpt_separator: "\n\n"
@@ -37,9 +37,9 @@ destination: ./_site
 quiet: false
 defaults: []
 
-kramdown:
-  input: GFM
-  enable_coderay: true
+#kramdown:
+#  input: GFM
+#  enable_coderay: true
 
 # Disque
 disque: z-beatles.disqus.com
