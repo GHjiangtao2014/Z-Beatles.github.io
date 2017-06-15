@@ -36,11 +36,11 @@ include conf/spider.conf
 
 ##  实例：配置基于域名的虚拟主机方法
 
-    1. `sites-available`目录下新建VirtualHost配置文件  
-      ![新建VirtualHost配置文件](http://pro.topblog.top/pic/20161226_apache2_4.png)
-    2. 使用`a2dissite`命令来使原有的VirtualHost配置失效  
-      ![使用a2dissite命令](http://pro.topblog.top/pic/20161226_apache2_5.png)
-    3. 使用`a2ensite`命令来使新的VirtualHost配置生效  
-      ![使用a2ensite命令](http://pro.topblog.top/pic/20161226_apache2_6.png)
-    4. 重启apache2服务  
-      ![重启apache2服务](http://pro.topblog.top/pic/20161226_apache2_7.png)
+1. `sites-available`目录下新建VirtualHost配置文件  
+![新建VirtualHost配置文件](http://pro.topblog.top/pic/20161226_apache2_4.png)
+2. 使用`a2dissite`命令来使原有的VirtualHost配置失效  
+![使用a2dissite命令](http://pro.topblog.top/pic/20161226_apache2_5.png)
+3. 使用`a2ensite`命令来使新的VirtualHost配置生效  
+![使用a2ensite命令](http://pro.topblog.top/pic/20161226_apache2_6.png)
+4. 重启apache2服务  
+![重启apache2服务](http://pro.topblog.top/pic/20161226_apache2_7.png)
