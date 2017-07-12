@@ -3,8 +3,7 @@ layout: page
 title: About Me
 menu: about
 subtitle:  
-            <h3>
-            <span class="mega-octicon octicon-sign-out"></span>&nbsp;&nbsp; Download My Resume</h3>
+            <h3><span class="mega-octicon octicon-sign-out"></span>&nbsp;&nbsp; Download My Resume</h3>
             <a role="button" class="btn btn-primary hvr-grow-shadow" href="/assets/files/朱伟-Java后端实习生.pdf" target="_blanks">
                 <span class="flag-icon flag-icon-gb"></span> English
             </a>
@@ -13,8 +12,7 @@ subtitle:
             </a>
             <h4>注：个人简历暂时仅提供中文版本下载</h4>
 
-            <a class="pull-right hvr-grow" href="#jump"><span class="mega-octicon octicon-mail"></span>给我留言</a>
-
+            <a class="pull-left hvr-grow" href="#jump"><span class="mega-octicon octicon-mail"></span>     给我留言</a>
 
 css: ['about.css', 'sidebar-popular-repo.css', '../../bower_components/flag-icon-css/css/flag-icon.min.css']
 ---
