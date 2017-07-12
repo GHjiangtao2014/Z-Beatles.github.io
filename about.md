@@ -13,7 +13,7 @@ subtitle:
             </a>
             <h4>注：个人简历暂时仅提供中文版本下载</h4>
 
-            <h3><a class="pull-left hvr-grow" href="#jump"><span class="mega-octicon octicon-mail"></span>   给我留言</a></h3>
+            <a class="pull-right hvr-grow" href="#jump"><span class="mega-octicon octicon-mail"></span>给我留言</a>
 
 
 css: ['about.css', 'sidebar-popular-repo.css', '../../bower_components/flag-icon-css/css/flag-icon.min.css']
