@@ -38,9 +38,9 @@ tags: [shadowsocks]
 
 ### 创建VPS
 
-注册成功之后就可以登录DigitalOcean并创建你的VPS了。操作系统的话，我选择的是ubuntu的，看个人喜好选择吧。服务器选择 $5/mon 的最低端的配置就够了，如有你有建站或者其他需求的话另行选择。经过测试在国内使用Singapore的机房是最优的选择，而其他的的机房延迟都很高。最后点击Create创建。
+注册成功之后就可以登录DigitalOcean并创建你的VPS了。操作系统的话，我选择的是ubuntu的，看个人喜好选择吧。服务器选择 $5/mon 的最低端的配置就够了，如有你有建站或者其他需求的话另行选择。移动网使用Singapore的机房延迟只有不到100ms，而其他的的机房延迟都很高。最后点击Create创建。
 
-Tips:贴一个测速地址，请根据测速结果选择最合适的机房。 [Digitalocean服务器测速-新加坡节点](http://speedtest-sgp1.digitalocean.com/)
+Tips:贴一个测速地址，请根据测速结果选择**最合适的机房**。 [Digitalocean服务器测速-新加坡节点](http://speedtest-sgp1.digitalocean.com/)
 
 ## ShadowSocks
 
