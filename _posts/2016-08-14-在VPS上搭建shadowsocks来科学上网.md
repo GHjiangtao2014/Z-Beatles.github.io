@@ -133,6 +133,11 @@ sudo ssserver -p 443 -k yourpassword -m aes-256-cfb --user nobody -d start
 
 ![youtube](http://img.blog.csdn.net/20160819235904373)
 
+## ShadowSocks加速
+
+只需简单的几步，即可实现ShadowSocks代理速度的提升
+
+详细内容请查看： [使用Google BBR实现TCP加速](http://waynechu.cn/shadowsocks/2016/08/19/%E4%BD%BF%E7%94%A8Google-BBR%E5%AE%9E%E7%8E%B0TCP%E5%8A%A0%E9%80%9F.html)
 
 > 如有疑问请留言或者给我来信。 E-mail:  waynechu@waynechu.cn
 
