@@ -30,17 +30,25 @@ tags: [shadowsocks]
 
 ### 注册DO帐号
 
-首先注册DigitalOcean账号。可以点击我的[邀请链接](https://m.do.co/c/6d3c33c4b39e)注册，激活后就会收到$10的奖励，但是仅仅这样还是无法在DigitalOcean上创建虚拟主机。你需要绑定信用卡或者使用PayPal添加银行卡，作为国内用户建议不要使用国内信用卡，有说会不成功，导致账号直接废了。通过paypal充值的方法验证账户的好处是如果有纠纷可以通过paypal纠纷申请退款，并且paypal资金安全性要好于信用卡绑定。PayPal需要支付$5才能完成注册流程。我是在paypal账号上绑定了一张银联的卡来付款的，$5按汇率大概￥33多一点吧。
+首先注册DigitalOcean账号。可以点击我的[邀请链接](https://m.do.co/c/6d3c33c4b39e)注册，注册成功后你的DigitalOcean下会收到10美金的邀请奖励，然后去你的注册邮箱激活帐号即可。
 
 ![这里写图片描述](http://img.blog.csdn.net/20160816161413413)
 
-* 如果你已经获得了了第一步的Student Developer Pack，那么可以在注册成功后在Settings->Billing下找到Promo Code，输入你在Student Developer Pack获得的学生优惠码，价值50刀，这对于屌丝学生来说可是笔不小的数目。
+### 使用PayPal支付
+
+帐号验证成功后，提示绑定信用卡或者使用PayPal支付，作为国内用户建议不要使用国内信用卡。PayPal是海外最大的在线支付平台，类似于国内的支付宝，没有使用的过小伙伴去注册一个即可，然后支付5美金折合人民币大概34元。
+
+![PayPal支付](http://ocb0u6vn2.bkt.clouddn.com/2016-08-14-paypal.png)
+
+* 提示：如果使用学生身份你获得了Student Developer Pack，那么可以在注册成功后在 Settings->Billing 下找到 Promo Code，输入你在 Student Developer Pack 获得的学生优惠码，价值50美金，这对于屌丝学生来说可是笔不小的数目。
 
 ### 创建VPS
 
-注册成功之后就可以登录DigitalOcean并创建你的VPS了。操作系统的话，我选择的是ubuntu的，看个人喜好选择吧。服务器选择 $5/mon 的最低端的配置就够了，如有你有建站或者其他需求的话另行选择。移动网使用Singapore的机房延迟只有不到100ms，而其他的的机房延迟都很高。最后点击Create创建。
+注册成功之后就可以登录DigitalOcean并创建你的VPS了。操作系统的话，我选择的是ubuntu的，看个人喜好选择吧。服务器选择 $5/mon 的最低端的配置就够了，如有你有建站或者其他需求的话另行选择。由于个人使用的是移动网，相对来说Singapore的机房延迟比较低100ms左右，而其他的的机房延迟都很高，最后点击Create创建。
 
-Tips:贴一个测速地址，请根据测速结果选择**最合适的机房**。 [Digitalocean服务器测速-新加坡节点](http://speedtest-sgp1.digitalocean.com/)
+提示:
+1. 贴一个测速地址，请根据测速结果选择**最佳带宽和延迟较低的机房**。 [Digitalocean服务器测速-新加坡节点](http://speedtest-sgp1.digitalocean.com/)
+2. 由于服务器在海外，地理位置原因导致延迟高是无法避免的，请根据测速情况选择合适的机房
 
 ## ShadowSocks
 
@@ -57,17 +65,17 @@ Tips:贴一个测速地址，请根据测速结果选择**最合适的机房**�
 
 ![这里写图片描述](http://img.blog.csdn.net/20160816163154280)
 
-初次进入需要输入原始的账号密码，账号是root，密码会在注册邮箱中找到（创建完 droplet 后发送至邮箱，注意有可能在邮件垃圾箱里），然后输入Username 和 Password回车确认( Tips:输入密码时不会有暗文 "********" 显示，尽管输入然后回车确定就好。而且初始密码有点长，需要有点耐心。^-^)，系统会让你再次输入原始的密码（current）UNIX password, 然后Enter new UNIX password 输入新密码，然后 Retype 确认密码。至此，VPS远程登陆成功。
+初次进入需要输入原始的账号密码，账号是root，密码会在注册邮箱中找到（创建完 droplet 后发送至邮箱，注意有可能在邮件垃圾箱里），然后输入Username 和 Password回车确认( Tips:输入密码时不会有暗文 "********" 显示，尽管输入然后回车确定就好。而且初始密码有点长，需要有点耐心。^-^)，系统会让你再次输入原始的密码（current）UNIX password, 然后 Enter new UNIX password 输入新密码，然后 Retype 确认密码。至此，VPS远程登陆成功。
 
 ### 在VPS上安装shadowsocks
 
 输入以下命令安装shadowsocks：
 
 ```shell
-apt-get update
-apt-get install python-pip
+sudo apt-get update
+sudo apt-get install python-pip
 # 询问是否Continue，输入y确认
-pip install shadowsocks
+sudo pip install shadowsocks
 ```
 
 ### 创建配置文件
@@ -84,7 +92,7 @@ sudo vim /etc/shadowsocks.json
         "443":"yourpassword"
     },
     "method":"aes-256-cfb",
-    "timeout":600
+    "timeout":5000
 }
 ```
 
