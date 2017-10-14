@@ -7,10 +7,10 @@ tags: [shadowsocks]
 
 之前一直在使用免费的ss，但是访问外网的速度实在是不可恭维，索性决定自己搭建VPS来翻墙。本来准备在[搬瓦工](https://bandwagonhost.com/)购买，不过最低配置也要$19.9/Y。  
 
-后来意外发现 GitHub Education 有面向学生的福利，一旦成功申请到Github Student pack，就可以获得$50，加上充值的$5和小伙伴给的邀请链接$10,此时账户一共有$65，对于最低配置的VPS $5一个月，可以使用一年啊！！直到毕业之前都一直有Promo Code赠送，那就远远不止免费一年了。
+后来意外发现 GitHub Education 有面向学生的福利，一旦成功申请到Github Student pack，就可以获得 $50，加上充值的$5和小伙伴给的邀请链接 $10,此时账户一共有 $65，对于最低配置的 VPS $5 一个月，可以使用一年啊！！直到毕业之前都一直有 Promo Code 赠送，那就远远不止免费一年了。
 
 推荐有能力，爱折腾，有科学上网需要的小伙伴食用此教程。
-这是得到Student Developer Pack时Git发来的邮件的部分内容：
+这是得到 Student Developer Pack 时Git发来的邮件的部分内容：
 
 > Spread the word: we love giving educational discounts to students, teachers, administrators, and researchers! Please send them to:  
         https://education.github.com 
@@ -27,13 +27,13 @@ tags: [shadowsocks]
 
 ### 注册DO帐号
 
-首先注册DigitalOcean账号。可以点击我的[邀请链接](https://m.do.co/c/6d3c33c4b39e)注册，注册成功后你的DigitalOcean下会收到10美金的邀请奖励，然后去你的注册邮箱激活帐号即可。
+首先注册 DigitalOcean 账号。可以点击我的[邀请链接](https://m.do.co/c/6d3c33c4b39e)注册，注册成功后你的 DigitalOcean 下会收到10美金的邀请奖励，然后去你的注册邮箱激活帐号即可。
 
 ![注册DO帐号](http://ocb0u6vn2.bkt.clouddn.com/2016-08-14-regist.png)
 
 ### 使用PayPal支付
 
-帐号验证成功后，提示绑定信用卡或者使用PayPal支付，作为国内用户建议不要使用国内信用卡。PayPal是海外最大的在线支付平台，类似于国内的支付宝，没有使用的过小伙伴去注册一个即可，然后支付5美金折合人民币大概34元。
+帐号验证成功后，提示绑定信用卡或者使用 PayPal支付，作为国内用户建议不要使用国内信用卡。PayPal是海外最大的在线支付平台，类似于国内的支付宝，没有使用的过小伙伴去注册一个即可，然后支付5美金折合人民币大概34元。
 
 ![PayPal支付](http://ocb0u6vn2.bkt.clouddn.com/2016-08-14-paypal.png)
 
@@ -64,14 +64,14 @@ tags: [shadowsocks]
 
 初次进入需要输入初始的的账号和密码，账号是 root，密码会创建完 droplet 后发送至你的邮箱（如长时间未收到，请注意是否在邮件垃圾箱里）。  
 - 输入初始密码回车确认( 特别说明:输入密码时不会有暗文 "********" 显示，尽管输入然后回车确定就好。而且初始密码有点长，需要有点耐心。^-^)  
--（current）UNIX password 系统会让你再次输入初始的密码  
+- (current) UNIX password 系统会让你再次输入初始的密码  
 - Enter new UNIX password 此时输入你要修改新密码  
 - Retype 确认修改的新密码  
 至此，VPS远程登陆成功。
 
-### 在VPS上安装shadowsocks
+### 在VPS上安装Shadowsocks
 
-输入以下命令安装shadowsocks：
+输入以下命令安装Shadowsocks：
 
 ```shell
 sudo apt-get update
