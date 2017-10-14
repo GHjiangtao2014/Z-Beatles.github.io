@@ -15,16 +15,13 @@ tags: [shadowsocks]
 > Spread the word: we love giving educational discounts to students, teachers, administrators, and researchers! Please send them to:  
         https://education.github.com 
 
-真是暖心啊~~~业界良心！！！
+真是暖心啊 业界良心！！！
 具体过程参考以下内容：
 
 ## 获取Student Developer Pack
 
 如果你不是学生，请跳过第一步。如果你是学生的话，首先你要 [注册GitGub帐号](https://github.com/)，然后前往 [GitHub Education](https://education.github.com/)获取Student Developer Pack，点击 I am a student 填写学生验证信息， Verify academic status 一栏选择 I don't have a school-issued email （第一次我使用学校的 edu 邮箱提交申请当天就被拒绝了，貌似国内edu邮箱没有公信力），然后上传你的学生证照片或者能证明你是学生即可。剩下的就是漫长的等待了，不过这点等待还是很值得的（本人等了接近2天终于收到确认信件）~~~
 
-![这里写图片描述](http://img.blog.csdn.net/20160816164348813)
-
-![这里写图片描述](http://img.blog.csdn.net/20160816164637677)
 
 ##  DigitalOcean
 
@@ -32,7 +29,7 @@ tags: [shadowsocks]
 
 首先注册DigitalOcean账号。可以点击我的[邀请链接](https://m.do.co/c/6d3c33c4b39e)注册，注册成功后你的DigitalOcean下会收到10美金的邀请奖励，然后去你的注册邮箱激活帐号即可。
 
-![这里写图片描述](http://img.blog.csdn.net/20160816161413413)
+![注册DO帐号](http://ocb0u6vn2.bkt.clouddn.com/2016-08-14-regist.png)
 
 ### 使用PayPal支付
 
@@ -47,8 +44,8 @@ tags: [shadowsocks]
 注册成功之后就可以登录DigitalOcean并创建你的VPS了。操作系统的话，我选择的是ubuntu的，看个人喜好选择吧。服务器选择 $5/mon 的最低端的配置就够了，如有你有建站或者其他需求的话另行选择。由于个人使用的是移动网，相对来说Singapore的机房延迟比较低100ms左右，而其他的的机房延迟都很高，最后点击Create创建。
 
 提示:
-1. 贴一个测速地址，请根据测速结果选择**最佳带宽和延迟较低的机房**。 [Digitalocean服务器测速-新加坡节点](http://speedtest-sgp1.digitalocean.com/)
-2. 由于服务器在海外，地理位置原因导致延迟高是无法避免的，请根据测速情况选择合适的机房
+- 贴一个测速地址，请根据测速结果选择**最佳带宽和延迟较低的机房**。 [Digitalocean服务器测速-新加坡节点](http://speedtest-sgp1.digitalocean.com/)
+- 由于服务器在海外，地理位置原因导致延迟高是无法避免的，请根据测速情况选择合适的机房
 
 ## ShadowSocks
 
@@ -59,13 +56,18 @@ tags: [shadowsocks]
 ### 配置shadowsocks服务端
 
 创建成功后，在你的 droplets 控制面板上的服务器名后点击下拉 more ，再点击 accessv console 进入远程终端的连接。
-![这里写图片描述](http://img.blog.csdn.net/20160816163553145)
+![控制台](http://ocb0u6vn2.bkt.clouddn.com/2016-08-14-console.png)
 
-*  Tips:记下你的服务器IP地址，配置SS客户端会用到。
+*  Tips:记下你的服务器IP地址，稍后配置SS客户端时会用到。
 
-![这里写图片描述](http://img.blog.csdn.net/20160816163154280)
+![登录主机](http://ocb0u6vn2.bkt.clouddn.com/2016-08-14-login.png)
 
-初次进入需要输入原始的账号密码，账号是root，密码会在注册邮箱中找到（创建完 droplet 后发送至邮箱，注意有可能在邮件垃圾箱里），然后输入Username 和 Password回车确认( Tips:输入密码时不会有暗文 "********" 显示，尽管输入然后回车确定就好。而且初始密码有点长，需要有点耐心。^-^)，系统会让你再次输入原始的密码（current）UNIX password, 然后 Enter new UNIX password 输入新密码，然后 Retype 确认密码。至此，VPS远程登陆成功。
+初次进入需要输入初始的的账号和密码，账号是 root，密码会创建完 droplet 后发送至你的邮箱（如长时间未收到，请注意是否在邮件垃圾箱里）。
+- 输入初始密码回车确认( 特别说明:输入密码时不会有暗文 "********" 显示，尽管输入然后回车确定就好。而且初始密码有点长，需要有点耐心。^-^)
+-（current）UNIX password 系统会让你再次输入初始的密码
+- Enter new UNIX password 此时输入你要修改新密码
+- Retype 确认修改的新密码
+至此，VPS远程登陆成功。
 
 ### 在VPS上安装shadowsocks
 
@@ -139,7 +141,7 @@ sudo ssserver -p 443 -k yourpassword -m aes-256-cfb --user nobody -d start
 
 贴张图表示下 ---> YouTube 1080P 毫无压力
 
-![youtube](http://img.blog.csdn.net/20160819235904373)
+![youtube](http://ocb0u6vn2.bkt.clouddn.com/2016-08-14-youtube.png)
 
 ## ShadowSocks加速
 
