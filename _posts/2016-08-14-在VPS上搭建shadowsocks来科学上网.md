@@ -94,7 +94,7 @@ sudo vim /etc/shadowsocks.json
         "443":"yourpassword"
     },
     "method":"aes-256-cfb",
-    "timeout":5000
+    "timeout":600
 }
 ```
 
